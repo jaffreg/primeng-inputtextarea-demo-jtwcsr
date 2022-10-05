@@ -2,10 +2,15 @@
 <textarea rows="5" cols="30" pInputTextarea></textarea>
 
 <h5>AutoResize</h5>
-<textarea
-  rows="5"
-  cols="30"
-  pInputTextarea
-  autoResize="autoResize"
-  [(ngModel)]="texte"
-></textarea>
+<form [formGroup]="formGroup">
+  <textarea
+    style="min-height: '75px'"
+    pInputTextarea
+    autoResize="autoResize"
+    formControlName="texte"
+  ></textarea>
+</form>
+
+<div>
+  <button (click)="modifier()">Modifier texte</button>
+</div>
