@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +27,7 @@ export class AppComponent implements OnInit {
   modifier() {
     this.texte = this.texte + this.texte;
     //this.formGroup.get('texte').setValue(this.texte);
-    //this.form.patchValue(this.texte);
-    this.form.setValue(this.texte);
+    this.form.patchValue(this.texte);
+    //this.form.setValue(this.texte);
   }
 }
