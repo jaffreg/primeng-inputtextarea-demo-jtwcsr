@@ -9,15 +9,16 @@ export class AppComponent implements OnInit {
   texte: string =
     'ABCD\nDDD\n1234ABCDF\nEEE\n123456' + 'AZRRRFD\n12365\n344R4\nPOIUY';
 
-  public form: FormControl = this._formBuilder.control(
-    '',
-    Validators.maxLength(255)
-  );
+  public form!: FormControl;
 
   constructor(private _formBuilder: FormBuilder) {}
 
   init() {
-    this.form.setValue(this.texte);
+    //this.form.setValue(this.texte);
+    this.form = this._formBuilder.control(
+      this.texte,
+      Validators.maxLength(255)
+    );
   }
 
   ngOnInit(): void {
